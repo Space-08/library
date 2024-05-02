@@ -43,11 +43,11 @@ book_id INT,
 CONSTRAINT FK_1 FOREIGN KEY (reader_id) REFERENCES readers(reader_id) ON DELETE CASCADE ON UPDATE CASCADE,
 CONSTRAINT FK_2 FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE ON UPDATE CASCADE,
 subscription_date DATE NOT NULL,
-PRIMARY KEY (subscription_id)</pre>
+PRIMARY KEY (subscription_id)
 );
 
 INSERT INTO subscriptions (reader_id, book_id, subscription_date)
 VALUES
 ('1', '2', '2022-05-24'),
 ('3', '1', '2023-06-28'),
-('2', '3', '2021-04-15');
+('2', '3', '2021-04-15');</pre>
