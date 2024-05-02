@@ -1,0 +1,391 @@
+*{
+	text-decoration: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+::-webkit-scrollbar{
+	width: 14px;
+	color: black;
+	border-radius: 100px;
+	position: absolute;
+}
+::-webkit-scrollbar-track{
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 100px;
+	border: 3px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	height: 14px;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: rgba(0, 0, 0, 0.6);
+	border: 3px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	height: 14px;
+}
+::-webkit-scrollbar-thumb:active{
+	background: rgba(0, 0, 0, 0.7);
+	border: 2px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	height: 14px;
+}
+body{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	height: 100dvh;
+	overflow-x: hidden;
+	background-image: url('../img/library.webp');
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#all-text-fields, .all-text-fields{
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	border: none;
+	border-radius: 10px;
+	outline: 1px solid transparent;
+	outline-offset: -1px;
+	transition: all 0.2s;
+}
+input:focus#all-text-fields, input:focus.all-text-fields{
+	outline: 1px solid #f58742;
+	outline-offset: -1px;
+	transition: all 0.2s;
+}
+#all-buttons{
+	display: flex;
+	cursor: pointer;
+	padding: 5px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	background-color: #f58742;
+	border: none;
+	color: #FFFFFF;
+	transition: all 0.2s;
+}
+#all-buttons:hover{
+	background-color: #cc7037;
+	transition: all 0.2s;
+}
+#all-buttons:active{
+	transform: scale(0.98);
+	transition: all 0.2s;
+}
+main{
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 100dvh;
+	overflow-x: hidden;
+	justify-content: center;
+	align-items: center;
+}
+.authorization{
+	display: flex;
+	position: relative;
+	padding: 30px;
+	border-radius: 20px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	outline: 1px solid rgba(255, 255, 255, 0.3);
+	outline-offset: -1px;
+}
+.authorization-inner{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+.authorization-inner h1{
+	font-size: 11pt;
+	color: #FFFFFF;
+	text-align: center;
+}
+form.authorization-data{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 220px;
+	gap: 10px;
+}
+form.authorization-data p{
+	font-size: 11pt;
+	color: #FFFFFF;
+}
+header{
+	display: flex;
+	position: fixed;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	padding: 14px;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	outline-offset: -1px;
+}
+.header-inner{
+	display: flex;
+	position: relative;
+	width: 85%;
+	max-width: 960px;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-between;
+}
+.header-inner h1{
+	display: flex;
+	color: #FFFFFF;
+	font-size: 11pt;
+}
+form.search-form{
+	display: flex;
+	position: relative;
+	width: 100%;
+	gap: 10px;
+	align-items: center;
+}
+.search-field{
+	display: flex;
+	position: relative;
+	width: 100%;
+}
+form.log-out-form{
+	display: flex;
+	position: relative;
+}
+.librarian-main{
+	margin-top: 57px;
+	align-items: start;
+}
+.librarian{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 85%;
+	max-width: 960px;
+	min-height: calc(100dvh - 77px);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	outline: 1px solid rgba(255, 255, 255, 0.3);
+	outline-offset: -1px;
+	border-radius: 18px;
+	padding: 20px;
+	margin: 10px;
+}
+.librarian-inner{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.tab>input[type="radio"]{
+	display: none;
+}
+.tab-content{
+	display: none;
+	gap: 15px;
+}
+.tab-content p,h2{
+	font-size: 11pt;
+	color: #FFFFFF;
+}
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2,
+#tab-btn-3:checked~#content-3{
+	display: flex;
+	flex-direction: column;
+	min-width: 100%;
+	min-height: calc(100vh - 165px);
+}
+.tab>label{
+	padding-bottom: 10px;
+	cursor: pointer;
+	transition: color .15s ease-in-out, border-color .15s ease-in-out;
+	color: #FFFFFF;
+	background: 0 0;
+	border-bottom: 2px solid transparent;
+	font-size: 11pt;
+}
+.tab>label:hover{
+	filter: brightness(90%);
+	border-bottom-color: #e5e5e5;
+}
+.tab>input[type="radio"]:checked+label{
+	cursor: default;
+	color: #FFFFFF;
+	border-bottom-color: #f58742;
+}
+.subscriptions-content, .readers-content{
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-color: #0000001b;
+	outline: 1px solid rgba(255, 255, 255, 0.3);
+	outline-offset: -1px;
+	border-radius: 12px;
+	color: #FFFFFF;
+}
+.subscriptions-objects, .readers-objects{
+	display: flex;
+	padding: 5px;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.subscription-object, .reader-object{
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 8px;
+	gap: 10px;
+	border-radius: 8px;
+	outline: 1px solid transparent;
+	outline-offset: -1px;
+	align-items: center;
+}
+:hover.subscription-object, :hover.reader-object{
+	cursor: default;
+	background-color: #0000001b;
+	outline: 1px solid rgba(255, 255, 255, 0.3);
+	transition: all .3s;
+}
+:hover.subscription-object p, :hover.reader-object p{
+	filter: brightness(90%);
+	transition: all .3s;
+}
+:hover.subscription-object button, :hover.reader-object button{
+	opacity: 1;
+}
+.edit-subscription-object, .edit-reader-object{
+	margin-left: auto;
+	cursor: pointer;
+}
+.delete-subscription-object, .delete-reader-object{
+	cursor: pointer;
+}
+.subscription-object button, .reader-object button{
+	display: flex;
+	opacity: 0;
+	padding: 20px;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	transition: all .1s;
+}
+.librarian-btn{
+	display: flex;
+	position: relative;
+	gap: 10px;
+	width: 100%;
+}
+.clear-btn{
+	display: flex;
+	position: relative;
+	margin-left: auto;
+}
+.clear-all-button{
+	display: flex;
+	min-width: 129px;
+	justify-content: center;
+}
+.new-subscription-button, .new-reader-button{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	min-width: 129px;
+}
+.new-reader{
+	display: none;
+}
+.new-object-container, .edit-object-container{
+	display: none;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100dvh;
+	overflow-x: hidden;
+}
+.overlay{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100dvh;
+	z-index: 101;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay:hover{
+	cursor: pointer;
+}
+.new, .edit{
+	display: flex;
+	position: absolute;
+	z-index: 102;
+	padding: 25px;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	outline: 1px solid rgba(255, 255, 255, 0.3);
+	outline-offset: -1px;
+	border-radius: 12px;
+}
+.new-form, .edit-form{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 240px;
+	gap: 10px;
+}
+.new-form h2, .edit-form h2{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.new-form select, .edit-form select{
+	display: flex;
+	position: relative;
+	border: none;
+	border-radius: 10px;
+	padding: 4px;
+}
+.save{
+	display: flex;
+	position: relative;
+	margin-top: 5px;
+}
